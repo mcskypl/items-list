@@ -1,0 +1,19 @@
+.addItem__table {
+    margin: 2rem 0;
+}
+
+.itemsList__table td {
+    padding: 1.2rem 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.itemsList__table {
+    margin: 2rem 0;
+    border-bottom: none;
+    text-align: center;
+}
+
+.tabItem__pointer {
+    cursor: pointer;
+}
