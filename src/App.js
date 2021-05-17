@@ -28,13 +28,12 @@ function App() {
         if (doc.exists) {
           setCurrentUserRole(doc.data().role);
         } else {
-        // doc.data() will be undefined in this case
-          console.log('No such document!');
+          setCurrentUserRole('Brak danych');
         }
-      })
-      .catch((error) => {
-        console.log('Error getting document:', error);
       });
+    // .catch((error) => {
+    //   console.log('Error getting document:', error);
+    // });
   });
 
   return (

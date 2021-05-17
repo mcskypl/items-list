@@ -16,19 +16,17 @@ const TabItem = ({
   statusEdit,
 }) => {
   const takeByEditFn = (e) => {
-    console.log(e.target.id);
-
     FirestoreService.db.collection('opak').doc(e.target.id).update({
       takeBy: e.target.value,
       takeByEdit: false,
-    })
-      .then(() => {
-        console.log('Document successfully updated!');
-      })
-      .catch((error) => {
-        // The document probably doesn't exist.
-        console.error('Error updating document: ', error);
-      });
+    });
+    // .then(() => {
+    //   console.log('Document successfully updated!');
+    // })
+    // .catch((error) => {
+    //   // The document probably doesn't exist.
+    //   console.error('Error updating document: ', error);
+    // });
   };
 
   const statusEditFn = (e) => {
@@ -36,14 +34,14 @@ const TabItem = ({
       status: e.target.value,
       statusEdit: false,
       checkedBy: e.target.name,
-    })
-      .then(() => {
-        console.log('Document successfully updated!');
-      })
-      .catch((error) => {
-        // The document probably doesn't exist.
-        console.error('Error updating document: ', error);
-      });
+    });
+    // .then(() => {
+    //   console.log('Document successfully updated!');
+    // })
+    // .catch((error) => {
+    //   // The document probably doesn't exist.
+    //   console.error('Error updating document: ', error);
+    // });
   };
 
   const statusResetFn = (e) => {
@@ -51,14 +49,14 @@ const TabItem = ({
       statusEdit: true,
       status: '',
       checkedBy: '',
-    })
-      .then(() => {
-        console.log('Document successfully updated!');
-      })
-      .catch((error) => {
-        // The document probably doesn't exist.
-        console.error('Error updating document: ', error);
-      });
+    });
+    // .then(() => {
+    //   console.log('Document successfully updated!');
+    // })
+    // .catch((error) => {
+    //   // The document probably doesn't exist.
+    //   console.error('Error updating document: ', error);
+    // });
   };
 
   return (

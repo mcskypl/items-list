@@ -11,10 +11,10 @@ const LoginPage = ({ setCurrentUser }) => {
       .then((userCredential) => {
         // Signed in
         setCurrentUser(userCredential.user);
-      })
-      .catch((error) => {
-        console.log(error);
       });
+    // .catch((error) => {
+    //   //
+    // });
   };
 
   return (

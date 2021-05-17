@@ -18,13 +18,13 @@ const AddItem = () => {
       checkedBy: '',
       status: '',
       statusEdit: true,
-    })
-      .then((docRef) => {
-        console.log('Document written with ID: ', docRef.id);
-      })
-      .catch((error) => {
-        console.error('Error adding document: ', error);
-      });
+    });
+    // .then((docRef) => {
+    //   console.log('Document written with ID: ', docRef.id);
+    // })
+    // .catch((error) => {
+    //   console.error('Error adding document: ', error);
+    // });
   };
 
   return (

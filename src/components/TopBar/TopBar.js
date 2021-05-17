@@ -7,13 +7,13 @@ const TopBar = () => {
   const logOutFn = (e) => {
     e.preventDefault();
     FirestoreService.auth()
-      .signOut()
-      .then(() => {
-        console.log('Wylogowano');
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+      .signOut();
+    // .then(() => {
+    //   console.log('Wylogowano');
+    // })
+    // .catch((error) => {
+    //   console.log(error);
+    // });
   };
 
   return (
