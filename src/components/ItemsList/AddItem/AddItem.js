@@ -15,7 +15,6 @@ const AddItem = () => {
     if (currentExDate === '') setCurrentExDate('n/a');
     e.preventDefault();
 
-    console.log(currentBatch, currentExDate);
     FirestoreService.db.collection('opak').add({
       addedTime: new Date(),
       pz: currentPz,

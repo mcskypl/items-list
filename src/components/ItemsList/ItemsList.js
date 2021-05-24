@@ -19,6 +19,7 @@ const ItemsList = ({ database, userHala }) => (
       {
       database ? database.map((i) => (
         <TabItem
+          key={i.id}
           id={i.id}
           addedTime={i.addedTime.toDate()}
           pz={i.pz}
