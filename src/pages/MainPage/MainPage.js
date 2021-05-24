@@ -28,7 +28,7 @@ class MainPage extends Component {
         {(context) => (
           <>
             {/* eslint-disable-next-line react/destructuring-assignment */}
-            {context.currentUserApp.displayName ? <ItemsList database={this.state.database} user={context.currentUserApp.displayName} /> : ''}
+            {context.currentUserFullNameApp ? <ItemsList database={this.state.database} userHala={context.currentUserHalaApp} /> : ''}
           </>
         ) }
       </AppContext.Consumer>

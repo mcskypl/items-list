@@ -1,19 +1,62 @@
-.addItem__table {
-    margin: 2rem 0;
-}
+/* .spinner-border { */
+/*    margin: 10vh; */
+/* } */
 
-.itemsList__table td {
-    padding: 1.2rem 0;
-    text-align: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
+/* .addItem__table { */
+/*    margin: 2rem 0; */
+/* } */
 
-.itemsList__table {
-    margin: 2rem 0;
-    border-bottom: none;
-    text-align: center;
-}
+/* .itemsList__table tr:hover { */
+/*    background-color: rgba(0, 0, 0, 0.06); */
+/* } */
 
-.tabItem__pointer {
-    cursor: pointer;
-}
+/* .itemsList__table td { */
+/*    padding: .8rem 0; */
+/*    text-align: center; */
+/*    border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
+/* } */
+
+/* .itemsList__table { */
+/*    margin: 2rem 0; */
+/*    border-bottom: none; */
+/*    text-align: center; */
+/* } */
+
+/* .itemsList__table__item__indexItem { */
+/*    text-align: left !important; */
+/*    padding-left: 36px !important; */
+/* } */
+
+/* .itemsList__table__item__quantity { */
+/*    text-align: right !important; */
+/*    padding-right: 36px !important; */
+/* } */
+
+/* .itemsList__table__date { */
+/*    width: 10%; */
+/* } */
+
+/* .itemsList__table__pz { */
+/*    width: 10%; */
+/* } */
+
+/* .itemsList__table__index { */
+/*    width: 10%; */
+/* } */
+
+/* .itemsList__table__quantity { */
+/*    width: 10%; */
+/* } */
+
+/* .itemsList__table__get, .itemsList__table__check, .itemsList__table__status { */
+/*    width: 20%; */
+/* } */
+
+/* .form-select { */
+/*   width: 75%; */
+/*    margin: 0 auto; */
+/* } */
+
+/* .tabItem__pointer { */
+/*    cursor: pointer; */
+/* } */

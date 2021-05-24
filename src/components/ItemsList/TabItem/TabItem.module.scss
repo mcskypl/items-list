@@ -1,0 +1,28 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  font-size: 14px;
+  letter-spacing: 1px;
+  width: 100%;
+  margin-bottom: 2px;
+  display: flex;
+  justify-content: space-around;
+  padding: 6px 0;
+  border-bottom: 1px solid #C6C6C6;
+  text-align: center;
+
+  .item {
+    width: 10%;
+
+    &:last-child {
+      display: flex;
+    }
+
+    .img {
+      margin-left: 10px;
+    }
+  }
+}

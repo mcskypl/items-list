@@ -1,0 +1,63 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes shadow {
+  0% {box-shadow: none}
+  100% {box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5);}
+}
+
+.wrapper {
+  background-color: #ECEEF8;
+  width: 75vw;
+  margin: 2rem auto 0 auto;
+  border-radius: 20px;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-evenly;
+
+  .box {
+    font-size: 14px;
+    width: 14%;
+    border: 1px solid #4865C5;
+    border-radius: 20px;
+    text-transform: uppercase;
+  }
+
+  input {
+    background-color: #ECEEF8;
+    padding: 12px 10px;
+    text-align: right;
+    font-weight: bold;
+    color: rgba(72, 101, 197, 1);
+    letter-spacing: 1px;
+
+    &::placeholder {
+      font-size: 14px;
+      text-align: right;
+      color: rgba(72, 101, 197, 0.5);
+      font-weight: normal;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button {
+    background-color: #4865C5;
+    cursor: pointer;
+
+    &:hover {
+      animation: shadow .2s forwards;
+    }
+  }
+}
+
+.line {
+  width: 50vw;
+  margin: 20px auto;
+  background-color: #C9C9C9;
+  height: 1px;
+}

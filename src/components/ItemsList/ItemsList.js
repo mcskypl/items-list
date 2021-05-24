@@ -1,44 +1,38 @@
 import React from 'react';
 import TabItem from './TabItem/TabItem';
 import AddItem from './AddItem/AddItem';
+import style from './ItemsList.module.scss';
 
-const ItemsList = ({ database, user }) => (
+const ItemsList = ({ database, userHala }) => (
   <div className="container">
-    <h2>{database ? '' : 'Ładowanie danych ✨'}</h2>
-    {user === 'Sebastian Westfal' ? <AddItem /> : ''}
 
-    <table className="table itemsList__table">
-      <thead>
-        <tr>
-          <th>Data</th>
-          <th>Nr pz</th>
-          <th>Index</th>
-          <th>Ilość</th>
-          <th>Pobrał/a</th>
-          <th>Sprawdził/a</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
+    {database ? '' : (
+      <div className="d-flex justify-content-center">
+        <div className="spinner-border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    )}
 
-        {
-            database ? database.map((i) => (
-              <TabItem
-                id={i.id}
-                addedTime={i.addedTime.toDate()}
-                pz={i.pz}
-                indexItem={i.indexItem}
-                quantity={i.quantity}
-                takeBy={i.takeBy}
-                takeByEdit={i.takeByEdit}
-                checkedBy={i.checkedBy}
-                status={i.status}
-                statusEdit={i.statusEdit}
-              />
-            )) : ''
-          }
-      </tbody>
-    </table>
+    {userHala === '4' && database ? <AddItem /> : ''}
+    <div className={style.wrapper}>
+      {
+      database ? database.map((i) => (
+        <TabItem
+          id={i.id}
+          addedTime={i.addedTime.toDate()}
+          pz={i.pz}
+          indexItem={i.indexItem}
+          quantity={i.quantity}
+          batch={i.batch}
+          exDate={i.exDate}
+          checkedBy={i.checkedBy}
+          status={i.status}
+          statusEdit={i.statusEdit}
+        />
+      )) : ''
+    }
+    </div>
   </div>
 );
 
