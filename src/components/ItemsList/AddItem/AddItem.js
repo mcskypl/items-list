@@ -10,18 +10,19 @@ const AddItem = () => {
   const [currentBatch, setCurrentBatch] = useState('');
   const [currentExDate, setCurrentExDate] = useState('');
 
+  if (currentBatch === '') setCurrentBatch('n/a');
+  if (currentExDate === '') setCurrentExDate('n/a');
+
   const addItemFn = (e) => {
-    if (currentBatch === '') setCurrentBatch('n/a');
-    if (currentExDate === '') setCurrentExDate('n/a');
     e.preventDefault();
 
     FirestoreService.db.collection('opak').add({
       addedTime: new Date(),
-      pz: currentPz,
-      indexItem: currentIndex,
-      quantity: currentQuantity,
-      batch: currentBatch,
-      exDate: currentExDate,
+      pz: currentPz.toUpperCase(),
+      indexItem: currentIndex.toUpperCase(),
+      quantity: currentQuantity.toUpperCase(),
+      batch: currentBatch.toUpperCase(),
+      exDate: currentExDate.toUpperCase(),
       checkedBy: '----------',
       status: '----------',
       statusEdit: true,
@@ -45,8 +46,6 @@ const AddItem = () => {
           <img src={addIcon} alt="Dodaj" />
         </button>
       </form>
-
-      <div className={style.line} />
     </>
   );
 };

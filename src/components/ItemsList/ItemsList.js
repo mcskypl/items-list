@@ -21,7 +21,7 @@ const ItemsList = ({ database, userHala }) => (
         <TabItem
           key={i.id}
           id={i.id}
-          addedTime={i.addedTime.toDate()}
+          addedTime={i.addedTime}
           pz={i.pz}
           indexItem={i.indexItem}
           quantity={i.quantity}

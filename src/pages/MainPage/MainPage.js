@@ -12,7 +12,7 @@ class MainPage extends Component {
   componentDidMount() {
     FirestoreService.db
       .collection('opak')
-      .orderBy('pz', 'desc')
+      .orderBy('addedTime', 'desc')
       .onSnapshot((snapshot) => {
         const tmp = [];
         snapshot.forEach((doc) => {

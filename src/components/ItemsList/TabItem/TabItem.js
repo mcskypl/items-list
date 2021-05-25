@@ -3,86 +3,100 @@ import React from 'react';
 import AppContext from '../../../context';
 import style from './TabItem.module.scss';
 import okIcon from '../../../icons/ok.svg';
+import DataList from '../dataList/dataList';
 
 const TabItem = (
   {
     id,
     indexItem,
-    // addedTime,
+    addedTime,
     pz,
     quantity,
     batch,
     exDate,
     checkedBy,
     status,
-    // statusEdit,
+    statusEdit,
   },
-) => (
-// const takeByEditFn = (e) => {
-//   FirestoreService.db.collection('opak').doc(e.target.id).update({
-//     takeBy: e.target.value,
-//     takeByEdit: false,
-//   });
-//   // .then(() => {
-//   //   console.log('Document successfully updated!');
-//   // })
-//   // .catch((error) => {
-//   //   // The document probably doesn't exist.
-//   //   console.error('Error updating document: ', error);
-//   // });
-// };
-//
-// const statusEditFn = (e) => {
-//   FirestoreService.db.collection('opak').doc(e.target.id).update({
-//     status: e.target.value,
-//     statusEdit: false,
-//     checkedBy: e.target.name,
-//   });
-//   // .then(() => {
-//   //   console.log('Document successfully updated!');
-//   // })
-//   // .catch((error) => {
-//   //   // The document probably doesn't exist.
-//   //   console.error('Error updating document: ', error);
-//   // });
-// };
-//
-// const statusResetFn = (e) => {
-//   FirestoreService.db.collection('opak').doc(e.target.id).update({
-//     statusEdit: true,
-//     status: '',
-//     checkedBy: '',
-//   });
-//   // .then(() => {
-//   //   console.log('Document successfully updated!');
-//   // })
-//   // .catch((error) => {
-//   //   // The document probably doesn't exist.
-//   //   console.error('Error updating document: ', error);
-//   // });
-// };
+) => {
+  console.log('ok');
+  // const [newStatus, setNewStatus] = useState('');
+  // const takeByEditFn = (e) => {
+  //   FirestoreService.db.collection('opak').doc(e.target.id).update({
+  //     takeBy: e.target.value,
+  //     takeByEdit: false,
+  //   });
+  //   // .then(() => {
+  //   //   console.log('Document successfully updated!');
+  //   // })
+  //   // .catch((error) => {
+  //   //   // The document probably doesn't exist.
+  //   //   console.error('Error updating document: ', error);
+  //   // });
+  // };
+  //
+  // const statusEditFn = (e) => {
+  //   FirestoreService.db.collection('opak').doc(e.target.id).update({
+  //     status: e.target.value,
+  //     statusEdit: false,
+  //     checkedBy: e.target.name,
+  //   });
+  //   // .then(() => {
+  //   //   console.log('Document successfully updated!');
+  //   // })
+  //   // .catch((error) => {
+  //   //   // The document probably doesn't exist.
+  //   //   console.error('Error updating document: ', error);
+  //   // });
+  // };
+  //
+  // const statusResetFn = (e) => {
+  //   FirestoreService.db.collection('opak').doc(e.target.id).update({
+  //     statusEdit: true,
+  //     status: '',
+  //     checkedBy: '',
+  //   });
+  //   // .then(() => {
+  //   //   console.log('Document successfully updated!');
+  //   // })
+  //   // .catch((error) => {
+  //   //   // The document probably doesn't exist.
+  //   //   console.error('Error updating document: ', error);
+  //   // });
+  // };
+  return (
+    <AppContext.Consumer>
 
-  <AppContext.Consumer>
-
-    {() => (
-      <>
-        <div className={style.wrapper} key={id}>
-          <div className={style.item}>12</div>
-          <div className={style.item}>{pz}</div>
-          <div className={style.item}>{indexItem}</div>
-          <div className={style.item}>{quantity}</div>
-          <div className={style.item}>{batch}</div>
-          <div className={style.item}>{exDate}</div>
-          <div className={style.item}>{checkedBy}</div>
-          <div className={style.item}>
-            <p>{status}</p>
-            <img src={okIcon} alt="ok" className={style.img} />
+      {() => (
+        <>
+          <div className={style.wrapper} key={id}>
+            <div className={style.item}>
+              {new Date(addedTime.seconds * 1000)
+                .toISOString()
+                .replace(/T.*/, '')
+                .split('-')
+                .join('-')}
+            </div>
+            <div className={style.item}>{pz}</div>
+            <div className={style.item}>{indexItem}</div>
+            <div className={style.item}>{quantity}</div>
+            <div className={style.item}>{batch}</div>
+            <div className={style.item}>{exDate}</div>
+            <div className={style.item}>{checkedBy}</div>
+            <div className={style.item}>
+              {statusEdit ? <DataList /> : (
+                <>
+                  <p>{status}</p>
+                  <img src={okIcon} alt="ok" className={style.img} />
+                </>
+              )}
+            </div>
           </div>
-        </div>
-      </>
-    )}
-  </AppContext.Consumer>
-);
+        </>
+      )}
+    </AppContext.Consumer>
+  );
+};
 export default TabItem;
 
 // <tr value={id} className={status}>
