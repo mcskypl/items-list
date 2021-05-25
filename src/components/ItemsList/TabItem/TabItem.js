@@ -18,8 +18,7 @@ const TabItem = (
     status,
     statusEdit,
   },
-) => {
-  console.log('ok');
+) => (
   // const [newStatus, setNewStatus] = useState('');
   // const takeByEditFn = (e) => {
   //   FirestoreService.db.collection('opak').doc(e.target.id).update({
@@ -64,7 +63,7 @@ const TabItem = (
   //   //   console.error('Error updating document: ', error);
   //   // });
   // };
-  return (
+  (
     <AppContext.Consumer>
 
       {() => (
@@ -95,8 +94,7 @@ const TabItem = (
         </>
       )}
     </AppContext.Consumer>
-  );
-};
+  ));
 export default TabItem;
 
 // <tr value={id} className={status}>
