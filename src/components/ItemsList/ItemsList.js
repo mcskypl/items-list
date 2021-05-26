@@ -3,7 +3,7 @@ import TabItem from './TabItem/TabItem';
 import AddItem from './AddItem/AddItem';
 import style from './ItemsList.module.scss';
 
-const ItemsList = ({ database, userHala }) => (
+const ItemsList = ({ database, userRole, userFullNameApp }) => (
   <div className="container">
 
     {database ? '' : (
@@ -14,7 +14,7 @@ const ItemsList = ({ database, userHala }) => (
       </div>
     )}
 
-    {userHala === '4' && database ? <AddItem /> : ''}
+    {userRole === 'admin' && database ? <AddItem /> : ''}
     <div className={style.wrapper}>
       {
       database ? database.map((i) => (
@@ -23,13 +23,17 @@ const ItemsList = ({ database, userHala }) => (
           id={i.id}
           addedTime={i.addedTime}
           pz={i.pz}
+          pzMag={i.pzMag}
           indexItem={i.indexItem}
           quantity={i.quantity}
+          unit={i.unit}
           batch={i.batch}
           exDate={i.exDate}
           checkedBy={i.checkedBy}
           status={i.status}
           statusEdit={i.statusEdit}
+          userFullNameApp={userFullNameApp}
+          userRole={userRole}
         />
       )) : ''
     }

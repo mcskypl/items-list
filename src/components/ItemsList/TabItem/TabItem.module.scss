@@ -14,16 +14,32 @@
   border-bottom: 1px solid #C6C6C6;
   text-align: center;
 
-  .item {
+  .itemSmall {
     width: 10%;
+
+    &:nth-child(3) {
+      font-weight: bold;
+    }
+
+    &:nth-child(4) {
+      text-align: right;
+      font-weight: bold;
+      padding-right: 6px;
+    }
+  }
+
+  .item {
+    width: 16%;
 
     &:last-child {
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
     }
 
-    .img {
-      margin-left: 10px;
+    img {
+      cursor: pointer;
     }
   }
 }

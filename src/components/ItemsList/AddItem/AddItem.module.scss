@@ -19,7 +19,27 @@
 
   .box {
     font-size: 14px;
-    width: 14%;
+    width: 12%;
+    border: 1px solid #4865C5;
+    border-radius: 10px;
+    text-transform: uppercase;
+  }
+
+  select {
+    background-color: #ECEEF8;
+    padding-left: 5px;
+    color: rgba(72, 101, 197, 1);
+    letter-spacing: 1px;
+    font-weight: bold;
+
+    option {
+      text-transform: none;
+    }
+  }
+
+  .boxSmall {
+    font-size: 14px;
+    width: 6%;
     border: 1px solid #4865C5;
     border-radius: 10px;
     text-transform: uppercase;
