@@ -9,12 +9,12 @@ const UserInfoPage = () => (
       <div className={style.wrapper}>
         <div className={style.container}>
           <div className={style.desc}>
-            Nazwa użytkownika:
+            <b>Nazwa użytkownika:</b>
             {' '}
             {context.currentUserFullNameApp}
           </div>
           <div className={style.desc}>
-            Funkcja:
+            <b>Funkcja:</b>
             {' '}
             {context.currentUserRoleNameApp}
           </div>

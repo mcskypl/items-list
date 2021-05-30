@@ -11,14 +11,14 @@
 .wrapper {
   background-color: #ECEEF8;
   width: 75vw;
-  margin: 2rem auto 0 auto;
+  margin: 28px auto 0 auto;
   border-radius: 20px;
-  padding: .8rem 0;
+  padding: .6rem 0;
   display: flex;
   justify-content: space-evenly;
 
   .box {
-    font-size: 14px;
+    font-size: 12px;
     width: 12%;
     border: 1px solid #4865C5;
     border-radius: 10px;
@@ -38,7 +38,7 @@
   }
 
   .boxSmall {
-    font-size: 14px;
+    font-size: 12px;
     width: 6%;
     border: 1px solid #4865C5;
     border-radius: 10px;
@@ -49,12 +49,13 @@
     background-color: #ECEEF8;
     padding: 6px 10px;
     text-align: right;
+    font-size: 12px;
     font-weight: bold;
     color: rgba(72, 101, 197, 1);
     letter-spacing: 1px;
 
     &::placeholder {
-      font-size: 14px;
+      font-size: 12px;
       text-align: right;
       color: rgba(72, 101, 197, 0.5);
       font-weight: normal;
@@ -72,5 +73,17 @@
     &:hover {
       animation: shadow .2s forwards;
     }
+  }
+}
+
+@media (max-width: 1400px) {
+  .wrapper {
+    width: 95vw;
+  }
+}
+
+@media print {
+  .wrapper {
+    display: none;
   }
 }

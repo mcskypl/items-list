@@ -9,3 +9,10 @@
   width: 75vw;
   margin: 28px auto 0 auto;
 }
+
+@media (max-width: 1400px) {
+  .wrapper {
+    width: 95vw;
+  }
+}
+

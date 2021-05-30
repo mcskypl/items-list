@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import AppContext from '../../context';
 import * as FirestoreService from '../../services/firestore';
 import style from './TobBar.module.scss';
@@ -7,6 +7,7 @@ import userIcon from '../../icons/user.svg';
 import logoutIcon from '../../icons/logout.svg';
 import infoIcon from '../../icons/info.svg';
 import settingsIcon from '../../icons/settings.svg';
+import printIcon from '../../icons/print.svg';
 
 const TopBar = () => {
   const logOutFn = (e) => {
@@ -20,29 +21,40 @@ const TopBar = () => {
   //   console.log(error);
   // });
   };
+
+  const printFn = () => {
+    window.print();
+  };
+
   return (
     <AppContext.Consumer>
       {(context) => (
-        <div className={style.wrapper}>
-          <div className={style.left}>
-            <img className={style.icon} src={userIcon} alt="User" />
-            <div className={style.user}>
-              <h3 className={style.name}>{context.currentUserFullNameApp}</h3>
-              <h5 className={style.magazyn}>Magazyn 4</h5>
+        <>
+          {context.currentUserApp ? (
+            <div className={style.wrapper}>
+              <div className={style.left}>
+                <img className={style.icon} src={userIcon} alt="User" />
+                <div className={style.user}>
+                  <h3 className={style.name}>{context.currentUserFullNameApp}</h3>
+                  <h5 className={style.magazyn}>{context.currentUserRoleNameApp}</h5>
+                </div>
+                <div className={style.buttons}>
+                  <p>OPAK</p>
+                  <p>SWO</p>
+                </div>
+              </div>
+              <div className={style.right}>
+                {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions */}
+                <img className={style.icon} src={printIcon} alt="Drukuj" onClick={printFn} />
+                <Link to="/userInfo"><img className={style.icon} src={infoIcon} alt="Informacje" /></Link>
+                <img className={style.icon} src={settingsIcon} alt="Ustawienia" />
+                {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions */}
+                <img className={style.icon} src={logoutIcon} alt="Wyloguj się" onClick={logOutFn} />
+              </div>
             </div>
-            <div className={style.buttons}>
-              <p>OPAK</p>
-              <p>SWO</p>
-            </div>
-          </div>
-          <div className={style.right}>
-            <img className={style.icon} src={infoIcon} alt="Informacje" />
-            <img className={style.icon} src={settingsIcon} alt="Ustawienia" />
-            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions */}
-            <img className={style.icon} src={logoutIcon} alt="Wyloguj się" onClick={logOutFn} />
-          </div>
-        </div>
+          ) : ''}
 
+        </>
       )}
     </AppContext.Consumer>
   );

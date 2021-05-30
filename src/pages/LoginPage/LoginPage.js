@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import * as FirestoreService from '../../services/firestore';
+import style from './LoginPage.module.scss';
 
 const LoginPage = ({ setCurrentUser }) => {
   const [email, setEmail] = useState('');
@@ -9,32 +10,34 @@ const LoginPage = ({ setCurrentUser }) => {
     e.preventDefault();
     FirestoreService.auth().signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
-        // Signed in
         setCurrentUser(userCredential.user);
+      })
+      .catch(() => {
+        alert('Nipoprawny login lub hasło!');
       });
-    // .catch((error) => {
-    //   //
-    // });
   };
 
   return (
-    <div className="container">
+    <div className={style.wrapper}>
       <form>
-        <div className="mb-3">
+        <h1>Zaloguj się</h1>
+        <div className={style.box}>
           <label htmlFor="exampleInputEmail1" className="form-label">E-mail</label>
           <input
             type="email"
-            className="form-control"
+            placeholder="name@example.com"
+            className={style.loginInput}
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div className="mb-3">
+        <div className={style.box}>
           <label htmlFor="exampleInputPassword1" className="form-label">Hasło</label>
           <input
             type="password"
-            className="form-control"
+            placeholder="••••••••"
+            className={style.loginInput}
             id="exampleInputPassword1"
             onChange={(e) => setPassword(e.target.value)}
           />

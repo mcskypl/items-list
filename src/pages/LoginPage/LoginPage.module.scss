@@ -1,0 +1,44 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 32px;
+
+  form {
+    //border: 1px solid #939393;
+    //border-radius: 20px;
+    //padding: 1vw 4vw;
+
+    h1 {
+      padding-bottom: 24px;
+    }
+
+    .box {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 18px;
+
+      .loginInput {
+        width: 20vw;
+        margin: 6px 0;
+        padding: 12px 24px;
+        border: 1px solid #8a8a8a;
+        border-radius: 20px;
+      }
+    }
+
+    button {
+      width: 100%;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background-color: #4865C5;
+      color: #fff;
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .loginInput {
+    width: 40vw !important;
+  }
+}

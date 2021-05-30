@@ -6,6 +6,7 @@ import zwolnioneImg from '../../../icons/zwolnione.svg';
 import wstrzymaneImg from '../../../icons/wstrzymane.svg';
 import niezgodneImg from '../../../icons/niezgodne.svg';
 import DataList from '../DataList/DataList';
+// import infoIcon from '../../../icons/info.svg';
 
 const TabItem = (
   {
@@ -42,11 +43,15 @@ const TabItem = (
   //
   const statusResetFn = (e) => {
     if (userRole === 'admin') {
-      FirestoreService.db.collection('opak').doc(e.target.id).update({
-        statusEdit: true,
-        status: '',
-        checkedBy: '----------',
-      });
+      // eslint-disable-next-line no-restricted-globals,no-alert
+      const r = confirm('Czy na pewno usunąć status?');
+      if (r === true) {
+        FirestoreService.db.collection('opak').doc(e.target.id).update({
+          statusEdit: true,
+          status: '',
+          checkedBy: '----------',
+        });
+      }
     }
 
     // .then(() => {
@@ -87,8 +92,8 @@ const TabItem = (
               {' '}
               {unit}
             </div>
-            <div className={style.itemSmall}>{batch}</div>
-            <div className={style.itemSmall}>{exDate}</div>
+            <div className={style.itemSmall}>{batch || 'n/a'}</div>
+            <div className={style.itemSmall}>{exDate || 'n/a'}</div>
             <div className={style.item}>{checkedBy}</div>
             <div className={style.item}>
               {statusEdit ? <DataList id={id} statusEditFn={statusEditFn} /> : (
@@ -98,6 +103,7 @@ const TabItem = (
                 </>
               )}
             </div>
+
           </div>
         </>
       )}

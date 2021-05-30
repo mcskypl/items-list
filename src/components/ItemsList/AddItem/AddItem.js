@@ -12,8 +12,6 @@ const AddItem = () => {
   const [currentUnit, setCurrentUnit] = useState('');
   const [currentPzMag, setCurrentPzMag] = useState('');
 
-  if (currentBatch === '') setCurrentBatch('n/a');
-  if (currentExDate === '') setCurrentExDate('n/a');
   if (currentUnit === '') setCurrentUnit('szt.');
   if (currentPzMag === '') setCurrentPzMag('OPAK');
 
@@ -22,7 +20,7 @@ const AddItem = () => {
 
     FirestoreService.db.collection('opak').add({
       addedTime: new Date(),
-      pz: currentPz,
+      pz: Number(currentPz),
       pzMag: currentPzMag,
       indexItem: currentIndex.toUpperCase(),
       quantity: currentQuantity,
